@@ -1,4 +1,5 @@
 import base64
+from getpass import getpass
 import os
 
 EXTRA_STR = 'ENCo0D#DT{xTCh$cKe>'
@@ -58,5 +59,5 @@ def update_file(funcptr, flist, key):
 def get_key():
     key = ''
     while key == '':
-        key = input('Enter key > ')
+        key = getpass('Enter key > ')
     return key
