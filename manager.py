@@ -1,4 +1,4 @@
-#!/Users/aviaryan/minconda3/bin/python
+#!/Users/aviaryan/miniconda3/bin/python
 import os
 from cryptlib import get_file_list, encode, update_file, get_key, decode
 
