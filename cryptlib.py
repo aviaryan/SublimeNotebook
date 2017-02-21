@@ -36,6 +36,8 @@ def get_key_hash(key):
 def get_file_list():
     listFiles = []
     for dirpath, dnames, fnames in os.walk('./'):
+        if dirpath.endswith('/public') or (dirpath.find('/public/') > -1):  # skip public notes
+            continue
         for f in fnames:
             if not (f.endswith('.txt') or f.endswith('.md')):
                 continue
