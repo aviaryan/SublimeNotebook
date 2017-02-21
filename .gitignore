@@ -1,0 +1,5 @@
+*.txt
+*.pyc
+__pycache__
+*.sublime-workspace
+.DS_Store
