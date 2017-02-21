@@ -3,3 +3,4 @@
 __pycache__
 *.sublime-workspace
 .DS_Store
+FLAG_FILE
