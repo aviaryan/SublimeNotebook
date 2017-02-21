@@ -16,14 +16,12 @@ def encode(key, clear):
 
 def decode(key, enc):
     st = ''
-    orig = enc
     enc = base64.b64decode(enc).decode('utf-8')  # dont know why urlsafe decode doesn't work
     incr = get_key_hash(key)
     for _ in enc:
         st += chr(ord(_) - incr)
     if not st.endswith(EXTRA_STR):
-        print('FAIL')
-        return orig
+        return None
     else:
         return st[:-1 * len(EXTRA_STR)]
 
@@ -52,6 +50,9 @@ def update_file(funcptr, flist, key):
         fptr.close()
         fptr = open(file, 'w')
         newData = funcptr(key, data)
+        if newData is None:
+            newData = data
+            print('FAIL')
         fptr.write(newData)
         fptr.close()
 
