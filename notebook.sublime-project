@@ -7,6 +7,10 @@
 			"shell_cmd": "\"/Users/aviaryan/miniconda3/bin/python\" -u \"manager.py\"",
 			"osx": {
 				"shell_cmd": "open -a Terminal.app ${project_path}"
+			},
+			"linux": {
+				// http://stackoverflow.com/questions/21196077/sublime-text-3-compile-program-and-run-in-terminal
+				"shell_cmd": "gnome-terminal -e './manager.py; exec bash\"'"
 			}
 		}
 	],
