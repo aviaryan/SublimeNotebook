@@ -44,6 +44,7 @@ def get_file_list():
 
 
 def update_file(funcptr, flist, key):
+    failed = False
     for file in flist:
         fptr = open(file, 'r')
         data = fptr.read()
@@ -52,9 +53,14 @@ def update_file(funcptr, flist, key):
         newData = funcptr(key, data)
         if newData is None:
             newData = data
+            failed = True
             print('FAIL')
         fptr.write(newData)
         fptr.close()
+        # check if failed
+        if failed:
+            break
+    return failed
 
 
 def get_key():
