@@ -2,7 +2,7 @@
 
 '''
 Sublime Notebook Manager
-v0.1.0
+v0.1.5
 '''
 
 import os
