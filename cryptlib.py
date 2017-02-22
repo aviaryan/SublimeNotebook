@@ -5,16 +5,19 @@ import os
 EXTRA_STR = 'ENCo0D#DT{xTCh$cKe>'
 ENCODED_IDF = '=*=EnC0d3dH3aDer==*'
 
+# Vigenere's Cipher: http://stackoverflow.com/a/38223403
 
 def encode(key, clear):
-    st = ''
     if clear.startswith(ENCODED_IDF):  # already encoded, no need to encode
         return clear
     clear += EXTRA_STR  # used to check if decrypt is correct
-    incr = get_key_hash(key)
-    for _ in clear:
-        st += chr(incr + ord(_))
-    return ENCODED_IDF + base64.b64encode(st.encode('utf-8')).decode('utf-8') 
+    # encode string
+    enc = []
+    for i in range(len(clear)):
+        key_c = key[i % len(key)]
+        enc_c = chr((ord(clear[i]) + ord(key_c)) % 256)
+        enc.append(enc_c)
+    return ENCODED_IDF + base64.urlsafe_b64encode("".join(enc).encode()).decode()
 
 
 def decode(key, enc):
@@ -22,10 +25,15 @@ def decode(key, enc):
     if not enc.startswith(ENCODED_IDF):  # not encoded, so not decode
         return enc
     enc = enc[len(ENCODED_IDF):]  # trim out idf
-    enc = base64.b64decode(enc).decode('utf-8')  # dont know why urlsafe decode doesn't work
-    incr = get_key_hash(key)
-    for _ in enc:
-        st += chr(ord(_) - incr)
+    # decode string
+    dec = []
+    enc = base64.urlsafe_b64decode(enc).decode()
+    for i in range(len(enc)):
+        key_c = key[i % len(key)]
+        dec_c = chr((256 + ord(enc[i]) - ord(key_c)) % 256)
+        dec.append(dec_c)
+    st = "".join(dec)
+    # check if correctly decoded
     if not st.endswith(EXTRA_STR):
         return None
     else:
