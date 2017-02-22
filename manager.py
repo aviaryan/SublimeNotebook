@@ -42,6 +42,7 @@ if __name__ == '__main__':
 			exit(2)
 		os.remove(FLAG)
 		# decoded, wait to close
+		print('Notes have been decrypted')
 		ans = ''
 		while ans != 'e':
 			ans = input('Press e to encrypt again > ')
