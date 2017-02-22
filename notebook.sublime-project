@@ -17,7 +17,9 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns": ["__pycache__"],
+			"file_exclude_patterns": ["*.pyc"]
 		}
 	]
 }
