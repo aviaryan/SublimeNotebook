@@ -1,4 +1,10 @@
 #!/Users/aviaryan/miniconda3/bin/python
+
+'''
+Sublime Notebook Manager
+v0.1.0
+'''
+
 import os
 from sys import exit
 from cryptlib import get_file_list, encode, update_file, get_key, decode
