@@ -3,19 +3,25 @@ from getpass import getpass
 import os
 
 EXTRA_STR = 'ENCo0D#DT{xTCh$cKe>'
+ENCODED_IDF = '=*=EnC0d3dH3aDer==*'
 
 
 def encode(key, clear):
     st = ''
-    clear += EXTRA_STR
+    if clear.startswith(ENCODED_IDF):  # already encoded, no need to encode
+        return clear
+    clear += EXTRA_STR  # used to check if decrypt is correct
     incr = get_key_hash(key)
     for _ in clear:
         st += chr(incr + ord(_))
-    return base64.b64encode(st.encode('utf-8')).decode('utf-8') 
+    return ENCODED_IDF + base64.b64encode(st.encode('utf-8')).decode('utf-8') 
 
 
 def decode(key, enc):
     st = ''
+    if not enc.startswith(ENCODED_IDF):  # not encoded, so not decode
+        return enc
+    enc = enc[len(ENCODED_IDF):]  # trim out idf
     enc = base64.b64decode(enc).decode('utf-8')  # dont know why urlsafe decode doesn't work
     incr = get_key_hash(key)
     for _ in enc:
