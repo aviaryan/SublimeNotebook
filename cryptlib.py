@@ -40,13 +40,6 @@ def decode(key, enc):
         return st[:-1 * len(EXTRA_STR)]
 
 
-def get_key_hash(key):
-    c = 0
-    for _ in key:
-        c += ord(_)
-    return c % 20
-
-
 def get_file_list():
     listFiles = []
     for dirpath, dnames, fnames in os.walk('./'):
