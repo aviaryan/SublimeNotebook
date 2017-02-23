@@ -1,5 +1,7 @@
 # Sublime Notebook
 
+Sublime Notebook is an attempt to use Sublime Text as a complete note taking application.
+
 **Read the Medium post for setup instructions**:
 https://medium.com/aviaryan/sublime-notebook-an-attempt-to-use-sublime-text-as-my-note-taking-application-b8d846c47905#.hy8alq2ip
 
