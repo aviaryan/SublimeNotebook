@@ -21,7 +21,7 @@ this new file will be ignored and will be encrypted when it's time to encrypt.
 * Same method can be used if you want to change the password used to secure the notes.
 
 
-## Setup Markdown Extended for highlighting md files
+## <a name="mdext"></a>Setup Markdown Extended for highlighting md files
 
 * Install the packages from here.
 
