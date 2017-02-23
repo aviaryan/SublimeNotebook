@@ -25,5 +25,9 @@
 			"folder_exclude_patterns": ["__pycache__"],
 			"file_exclude_patterns": ["*.pyc"]
 		}
-	]
+	],
+	"settings": {
+		"word_wrap": true,
+ 		"margin": 20
+	}
 }
