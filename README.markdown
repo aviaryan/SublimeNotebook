@@ -10,3 +10,27 @@ Read this Medium post please:
 this new file will be ignored and will be encrypted when it's time to encrypt. 
 * To update your installation of Sublime Notebook, decrypt your existing notes using old manager.py, then force exit the script before encrypting. Then update the script files from this repo and start `manager.py` to re-encrypt your notes.
 * Same method can be used if you want to change the password used to secure the notes.
+
+
+### Setup Markdown Extended for highlighting md files
+
+* Install the packages from here.
+
+	* [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended)
+	* [Sublime Monokai Extended](https://github.com/jonschlinkert/sublime-monokai-extended) - companion to the first package.
+
+* Make Sublime Markdown Extended as default langauge for markdown. 
+
+> Navigate through the following menus in Sublime Text: View -> Syntax -> Open all with current extension as... -> Markdown Extended
+
+* Make Sublime Monokai Extended default theme for Markdown extended. Open `Settings - Syntax Specific` from preferences and update the file as follows.
+
+```js
+{
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"extensions":
+	[
+		"md"
+	]
+}
+```
