@@ -3,7 +3,16 @@
 Read this Medium post please: 
 
 
-### FAQ
+## Features
+
+* Search across all notes
+* Hierarchical organization and display of notes
+* Password based encryption
+* Cloud sync
+* Markdown based markup and syntax highlighting
+
+
+## FAQ
 
 * Only *.txt and *.md files are detected as notes.
 * You don't need to be in decrypted state to create a new note. Even when in encrypted state, you can create a note. When manager.py starts decrypting the notes, 
@@ -12,14 +21,14 @@ this new file will be ignored and will be encrypted when it's time to encrypt.
 * Same method can be used if you want to change the password used to secure the notes.
 
 
-### Setup Markdown Extended for highlighting md files
+## Setup Markdown Extended for highlighting md files
 
 * Install the packages from here.
 
 	* [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended)
 	* [Sublime Monokai Extended](https://github.com/jonschlinkert/sublime-monokai-extended) - companion to the first package.
 
-* Make Sublime Markdown Extended as default langauge for markdown. 
+* Make Sublime Markdown Extended as default language for markdown. 
 
 > Navigate through the following menus in Sublime Text: View -> Syntax -> Open all with current extension as... -> Markdown Extended
 
