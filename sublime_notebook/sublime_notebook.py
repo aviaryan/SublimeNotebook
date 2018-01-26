@@ -1,5 +1,3 @@
-#!/Users/aviaryan/miniconda3/bin/python
-
 """
 Sublime Notebook Manager
 v1.0.0

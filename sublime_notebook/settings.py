@@ -1,5 +1,6 @@
 import json
 from sublime_notebook import SETTINGS_PATH
+from .message import print_err
 
 
 class Settings:
@@ -29,9 +30,9 @@ class Settings:
 			self.json = json.loads(data)
 			fp.close()
 			self.find_star()
-		except Exception:
+		except Exception as e:
 			# load default settings
-			pass
+			print_err('JSON Exception occurred: ' + str(e))
 
 	def find_star(self):
 		if Settings._find_in_array('*', self.json['private_folders']):
