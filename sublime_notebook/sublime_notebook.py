@@ -25,7 +25,7 @@ def main():
 	if not os.path.exists(FLAG):
 		# new case
 		# or decrypted state in power fail
-		print('Not encrypted, encrypting....')
+		print('Not encrypted, encrypting ....')
 		key = get_key()
 		print('Re-enter key')
 		key2 = get_key()
@@ -36,18 +36,25 @@ def main():
 		createFlagFile()
 	else:
 		# encrypted already
-		print('Encrypted, give key to unlock')
+		print('Encrypted. Enter key to unlock')
 		key = get_key()
 		failStatus = update_file(decode, get_file_list(), key)
 		if failStatus:
-			print('You entered wrong key. FO')
+			print('You entered wrong key. Fuck off!')
 			exit(2)
 		os.remove(FLAG)
 		# decoded, wait to close
-		print('Notes have been decrypted')
+		print('Notes have been decrypted\n')
 		ans = ''
-		while ans != 'e':
-			ans = input('Press e to encrypt again > ')
-		# encrypt
-		update_file(encode, get_file_list(), key)
-		createFlagFile()
+		while (True):
+			ans = input('Press "e" to encrypt again\nPress"d" to stay decrypted (this disables Sublime Notebook encryption)\n> ')
+			if ans == 'd' or ans == 'e':
+				break
+		if ans == 'e':
+			# encrypt
+			update_file(encode, get_file_list(), key)
+			createFlagFile()
+		else:
+			# disable sublime notebook
+			# exit as-is
+			pass
