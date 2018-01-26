@@ -3,4 +3,4 @@ Print statements
 """
 
 def print_info(msg):
-	print('\n[' + msg + ']\n')
+	print('\n[[ ' + msg + ' ]]\n')

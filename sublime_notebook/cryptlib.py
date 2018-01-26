@@ -1,6 +1,9 @@
 import base64
-from getpass import getpass
 import os
+import re
+from getpass import getpass
+from .settings import Settings
+
 
 EXTRA_STR = 'ENCo0D#DT{xTCh$cKe>'
 ENCODED_IDF = '=*=EnC0d3dH3aDer==*'
@@ -42,13 +45,21 @@ def decode(key, enc):
 
 def get_file_list():
     listFiles = []
+    sts = Settings()
+    # loop through directory
     for dirpath, dnames, fnames in os.walk('./'):
-        if dirpath.endswith('/public') or (dirpath.find('/public/') > -1):  # skip public notes
+        dirname = dirpath.replace('./', '', 1)
+        dirname = re.sub(r'/.*$', '', dirname)
+        # print(dirname)
+        if dirname.startswith('.'):  # hidden like .git
+            continue
+        if not sts.check_folder_private(dirname):
             continue
         for f in fnames:
             if not (f.endswith('.txt') or f.endswith('.md')):
                 continue
             listFiles.append(os.path.join(dirpath, f))
+    # print(listFiles)
     return listFiles
 
 
