@@ -2,12 +2,14 @@
 
 """
 Sublime Notebook Manager
-v0.2.1
+v1.0.0
 """
 
 import os
 from sys import exit
 from .cryptlib import get_file_list, encode, update_file, get_key, decode
+from .message import print_info
+
 
 FLAG = 'sublime_notebook/FLAG_FILE'
 
@@ -30,7 +32,7 @@ def main():
 		print('Re-enter key')
 		key2 = get_key()
 		if key != key2:
-			print('Keys don\'t match, exiting')
+			print_info('Keys don\'t match, exiting')
 			exit(1)
 		update_file(encode, get_file_list(), key2)
 		createFlagFile()
@@ -44,7 +46,7 @@ def main():
 			exit(2)
 		os.remove(FLAG)
 		# decoded, wait to close
-		print('Notes have been decrypted\n')
+		print_info('Notes have been decrypted')
 		ans = ''
 		while (True):
 			ans = input('Press "e" to encrypt again\nPress"d" to stay decrypted (this disables Sublime Notebook encryption)\n> ')
