@@ -11,6 +11,16 @@ from .settings import Settings
 from sublime_notebook import SETTINGS_PATH
 
 
+def get_first_time_key():
+	key = get_key()
+	print('Re-enter key')
+	key2 = get_key()
+	if key != key2:
+		print_info('Keys don\'t match, exiting')
+		exit(1)
+	return key2
+
+
 def main():
 	"""
 	Executes Sublime Notebook
@@ -23,13 +33,8 @@ def main():
 		print_info('Created settings.json in sublime_notebook/')
 		Settings._create_default_file()
 		# get password
-		key = get_key()
-		print('Re-enter key')
-		key2 = get_key()
-		if key != key2:
-			print_info('Keys don\'t match, exiting')
-			exit(1)
-		update_file(encode, get_file_list(), key2)
+		key = get_first_time_key()
+		update_file(encode, get_file_list(), key)
 		# update encryption status
 		sts = Settings()
 		sts.change_encrypted_status(True)
@@ -57,7 +62,7 @@ def main():
 			ans = input('Press "e" to encrypt\nPress "d" to stay decrypted\n> ')
 			if ans == 'd' or ans == 'e':
 				if ans == 'e' and key == '':  # already decrypt case
-					key = get_key()
+					key = get_first_time_key()
 				break
 		if ans == 'e':
 			# encrypt
