@@ -56,6 +56,9 @@ class Settings:
 		self.json['is_encrypted'] = status
 		self.save_settings()
 
+	def get_encrypted_status(self):
+		return self.json['is_encrypted']
+
 	def save_settings(self):
 		Settings._write_settings(self.json, self.file)
 

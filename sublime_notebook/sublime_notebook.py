@@ -34,22 +34,30 @@ def main():
 		sts = Settings()
 		sts.change_encrypted_status(True)
 	else:
-		# encrypted already
-		print('Encrypted. Enter key to unlock')
-		key = get_key()
-		failStatus = update_file(decode, get_file_list(), key)
-		if failStatus:
-			print('You entered wrong key. Fuck off!')
-			exit(2)
-		# remove encryption status
+		key = ''
+		# get settings
 		sts = Settings()
-		sts.change_encrypted_status(False)
-		# decoded, wait to close
-		print_info('Notes have been decrypted')
+		if sts.get_encrypted_status():
+			# already encrypted
+			print('Encrypted. Enter key to unlock')
+			key = get_key()
+			failStatus = update_file(decode, get_file_list(), key)
+			if failStatus:
+				print('You entered wrong key. Fuck off!')
+				exit(2)
+			# remove encryption status
+			sts.change_encrypted_status(False)
+			# decoded, wait to close
+			print_info('Notes have been decrypted')
+		else:
+			print_info('Notes are already decrypted')
+		# now decrypted
 		ans = ''
 		while (True):
-			ans = input('Press "e" to encrypt again\nPress "d" to stay decrypted\n> ')
+			ans = input('Press "e" to encrypt\nPress "d" to stay decrypted\n> ')
 			if ans == 'd' or ans == 'e':
+				if ans == 'e' and key == '':  # already decrypt case
+					key = get_key()
 				break
 		if ans == 'e':
 			# encrypt
