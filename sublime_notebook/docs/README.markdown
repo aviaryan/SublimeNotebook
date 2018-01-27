@@ -1,6 +1,15 @@
 # Documentation
 
+## Table of Contents
 
+* [Getting Started](#gs)
+* [Note taking features](#nt)
+* [Changing SublimeNotebook password](#cp)
+* [Setting up Markdown highlighting in Sublime Text](#mdext)
+* [FAQ](#faq)
+
+
+<a name="gs"></a>
 ## Getting started
 
 Before we proceed, here are the requirements for using this tool.
@@ -29,6 +38,7 @@ Now you can view and edit your notes and then later on encrypt them again by ent
 ![screen shot 2018-01-27 at 8 06 07 pm](https://user-images.githubusercontent.com/4047597/35472896-897a22a4-039d-11e8-9b1d-153c06bc203e.png)
 
 
+<a name="nt"></a>
 ## Note taking features
 
 You might be wondering how does this make it a note taking application. Well, let me show you.
@@ -44,15 +54,16 @@ If you want to search through all your notes, use the Sublime Text’s search in
 If you store the folder in Dropbox or Google Drive, you can have it on all your computers. Also, I will like to add here that the Python 3 script uses no extra dependencies so you can run the script out-of-the-box on any system that has Python installed (popular Linux distros and Macs for example have it by default).
 
 
-## Updating SublimeNotebook or changing password
+<a name="cp"></a>
+## Changing SublimeNotebook password
 
-* To update your installation of Sublime Notebook, decrypt your existing notes using old `manager.py`, then exit the script in decrypted state (using "d").
-Then update the script files from this repo and start `manager.py` to re-encrypt your notes.
+To change password of your Sublime Notebook, decrypt your existing notes using old `manager.py`, then exit the script in decrypted state (using "d").
 
-* Same method can be used if you want to change the password used to secure the notes.
+Then start `manager.py` again to re-encrypt your notes. This time you will be asked for a new password to encrypt your notes.
 
 
-## <a name="mdext"></a>Setup Markdown Extended for highlighting md files in Sublime Text
+<a name="mdext"></a>
+## Setup Markdown Extended for highlighting md files in Sublime Text
 
 * Install the packages from here.
 
@@ -76,9 +87,7 @@ Then update the script files from this repo and start `manager.py` to re-encrypt
 ```
 
 
-----
-
-
+<a name="faq"></a>
 ## FAQ
 
 Only *.txt and *.md files are detected as notes.
