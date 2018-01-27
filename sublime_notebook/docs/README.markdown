@@ -2,35 +2,65 @@
 
 ## Table of Contents
 
+* [Requirements](#rq)
 * [Getting Started](#gs)
+* [Accessing your notes](#ac)
+* [Encrypting your notes](#en)
 * [Note taking features](#nt)
 * [Changing SublimeNotebook password](#cp)
-* [Setting up Markdown highlighting in Sublime Text](#mdext)
+* [Setting up better Markdown highlighting in Sublime Text](#mdext)
 * [FAQ](#faq)
 
 
-<a name="gs"></a>
-## Getting started
+<a name="rq"></a>
+## Requirements
 
-Before we proceed, here are the requirements for using this tool.
+The requirements for using this tool are as follows. Make sure to have them installed before proceeding to the next section.
 
 * Sublime Text
 * Python 3
 * [Optional] A cloud sync application setup (Dropbox, Google Drive, OneDrive etc)
 
-So let’s begin. What you do is you first download the code from https://github.com/aviaryan/SublimeNotebook
 
-Then you put the code files in a cloud synced or local folder of your choice. Now you are all set. You can create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. Notes can be txt or md files and they will be encrypted with your password.
+<a name="gs"></a>
+## Getting started
+
+The first step is downloading the code from https://github.com/aviaryan/SublimeNotebook
+
+Then you put the code files in a cloud synced or local folder of your choice.
+
+Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. Notes can be txt or md files and they will be encrypted with your password.
 
 ![How a Sublime notebook looks like](https://cdn-images-1.medium.com/max/800/1*DuTrcxf-zJ-anQShA61efw.png)
 
-To encrypt or decrypt notes, you use the manager.py file. It runs in Python 3 and requires no additional dependencies. It is recommended you change the first line of the file to point to your interpreter.
+
+<a name="ac"></a>
+## Accessing your notes
+
+To access your notes, we will use the Projects feature of Sublime Text.
+
+Open Sublime Text and click on "Open Project" in the Project menu.
+
+Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Sidebar). You will see all your notes presented there with the hierarchy. 
+
+Whenever you want to open your Sublime Notebook, you can use the switch project shortcut (Cmd-Ctrl-P or Ctrl-Alt-P) and select `notebook.sublime-project` to switch to the Notebook project.
+
+
+<a name="en"></a>
+## Encrypting your notes
+
+To encrypt or decrypt notes, you use the `manager.py` file located in the notebook root. It runs in Python 3 and requires no additional dependencies. 
+I recommend changing the first line of the file to point to your interpreter.
 
 ```python
 #!/Users/aviaryan/miniconda3/bin/python
 ```
 
-So when you run `manager.py` for the first time, it will find the notes and ask you a password for encryption. 
+To run `manager.py`, you can use the shortcut Ctrl-B (Cmd-B on OSX) to launch a terminal window in the `manager.py`'s directory. 
+
+Then use `python manager.py` or `./manager.py` to run the script.
+
+When it runs for the first time, it will find the notes and ask you a password for encryption. 
 After getting the password, it will encrypt all non-public notes using that password. 
 In the subsequent runs, `manager.py` will work as an unlocker where it will ask password to decrypt the notes and then pause its execution. 
 Now you can view and edit your notes and then later on encrypt them again by entering 'e' in the prompt.
@@ -40,14 +70,6 @@ Now you can view and edit your notes and then later on encrypt them again by ent
 
 <a name="nt"></a>
 ## Note taking features
-
-You might be wondering how does this make it a note taking application. Well, let me show you.
-
-Open Sublime Text and click on "Open Project" in the Project menu.
-
-Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Sidebar). You will see all your notes presented there with the hierarchy. Whenever you want to open your Sublime Notebook, you can use the switch project shortcut (Cmd-Ctrl-P or Ctrl-Alt-P) and select notebook.sublime-project to switch to the Notebook project.
-
-If at the moment, you are in an encrypted state, you can use Ctrl-B (Cmd-B on OSX) to launch a terminal window in the manager.py's directory. So run `manager.py` from there to decrypt your notes. Now you can update the notes in Sublime Text and re-encrypt them.
 
 If you want to search through all your notes, use the Sublime Text’s search in project feature (Ctrl-Shift-F or Cmd-Shift-F).
 
@@ -63,7 +85,7 @@ Then start `manager.py` again to re-encrypt your notes. This time you will be as
 
 
 <a name="mdext"></a>
-## Setup Markdown Extended for highlighting md files in Sublime Text
+## Setting up better Markdown highlighting in Sublime Text
 
 * Install the packages from here.
 
