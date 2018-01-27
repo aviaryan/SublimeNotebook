@@ -45,6 +45,8 @@ Browse for the `notebook.sublime-project` file in the folder you downloaded and 
 
 Whenever you want to open your Sublime Notebook, you can use the switch project shortcut (Cmd-Ctrl-P or Ctrl-Alt-P) and select `notebook.sublime-project` to switch to the Notebook project.
 
+![Project Selector](https://user-images.githubusercontent.com/4047597/35473121-4556dd7a-03a1-11e8-8c3a-6e85592d5d5f.png)
+
 
 <a name="en"></a>
 ## Encrypting your notes
