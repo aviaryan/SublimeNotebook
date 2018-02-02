@@ -66,7 +66,7 @@ Then use `python manager.py` or `./manager.py` to run the script.
 
 When it runs for the first time, it will find the notes and ask you a password for encryption. 
 After getting the password, it will encrypt all non-public notes using that password. 
-In the subsequent runs, `manager.py` will work as an unlocker where it will ask password to decrypt the notes and then pause its execution. 
+In the subsequent runs, `manager.py` will work as an un-locker where it will ask password to decrypt the notes and then pause its execution. 
 Now you can view and edit your notes and then later on encrypt them again by entering 'e' in the prompt.
 
 ![screen shot 2018-01-27 at 8 06 07 pm](https://user-images.githubusercontent.com/4047597/35472896-897a22a4-039d-11e8-9b1d-153c06bc203e.png)
@@ -75,9 +75,13 @@ Now you can view and edit your notes and then later on encrypt them again by ent
 <a name="nt"></a>
 ## Note taking features
 
-If you want to search through all your notes, use the Sublime Text’s search in project feature (Ctrl-Shift-F or Cmd-Shift-F).
+To search through all your notes, use the Sublime Text’s search in project feature (Ctrl-Shift-F or Cmd-Shift-F).
 
-If you store the folder in Dropbox or Google Drive, you can have it on all your computers. Also, I will like to add here that the Python 3 script uses no extra dependencies so you can run the script out-of-the-box on any system that has Python installed (popular Linux distros and Macs for example have it by default).
+You can use the Sublime Text sidebar to view your notes in a hierarchical fashion.
+
+Store the folder in Dropbox, Google Drive or Box to have it on all your computers (as well as secure a backup). 
+
+The Python 3 script uses no extra dependencies so you can run the script out-of-the-box on any system that has Python installed (popular Linux distros and Macs for example have it by default).
 
 
 <a name="cp"></a>
@@ -112,7 +116,7 @@ You can also use the "*" symbol to select all folders. For example, in the follo
 ```
 
 **NOTE** - You should edit `settings.json` file only when the notebook is in a decrypted state. Changing it when notebook is encrypted can cause 
-un-intentional side-effects. `"is_encrypted": false` will be present in `settings.json` when notebook is decrypted.
+unintentional side-effects. `"is_encrypted": false` will be present in `settings.json` when notebook is decrypted.
 
 
 <a name="git"></a>
@@ -128,7 +132,7 @@ To enable git backups, enable the feature from `sublime_notebook/settings.json`.
 }
 ```
 
-Once this setting is enabled, you will have to make your notebook a git repo and set `notebookbackup` branch to the git remote you want to backup to.
+Once this setting is enabled, you will have to make your notebook a git repository and set `notebookbackup` branch to the git remote you want to backup to.
 Start with an empty remote repository to avoid any conflicts.
 
 ```sh
