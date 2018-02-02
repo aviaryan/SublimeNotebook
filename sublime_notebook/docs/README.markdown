@@ -8,6 +8,7 @@
 * [Encrypting your notes](#en)
 * [Note taking features](#nt)
 * [Changing SublimeNotebook password](#cp)
+* [Customizing which folders are encrypted](#custen)
 * [Setting up better Markdown highlighting in Sublime Text](#mdext)
 * [FAQ](#faq)
 
@@ -84,6 +85,33 @@ If you store the folder in Dropbox or Google Drive, you can have it on all your 
 To change password of your Sublime Notebook, decrypt your existing notes using old `manager.py`, then exit the script in decrypted state (using "d").
 
 Then start `manager.py` again to re-encrypt your notes. This time you will be asked for a new password to encrypt your notes.
+
+
+<a name="custen"></a>
+## Customizing which folders are encrypted
+
+To customize which folders are encrypted, use the `settings.json` file in `sublime_notebook/` directory.
+
+1. "private_folders" are the one that are encrypted. 
+2. "public_folders" are not encrypted.
+
+A folder by default is public if it is not included in either of them.
+
+You can also use the "*" symbol to select all folders. For example, in the following `settings.json` file, all folders except "web_links" are private(encrypted).
+
+```json
+{
+    "private_folders": [
+        "*"
+    ],
+    "public_folders": [
+        "web_links"
+    ]
+}
+```
+
+**NOTE** - You should edit `settings.json` file only when the notebook is in a decrypted state. Changing it when notebook is encrypted can cause 
+un-intentional side-effects. `"is_encrypted": false` will be present in `settings.json` when notebook is decrypted.
 
 
 <a name="mdext"></a>
