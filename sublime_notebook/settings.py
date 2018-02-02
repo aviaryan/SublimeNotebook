@@ -1,5 +1,5 @@
 import json
-from sublime_notebook import SETTINGS_PATH
+from sublime_notebook import SETTINGS_PATH, VERSION
 from .message import print_err
 
 
@@ -10,7 +10,8 @@ class Settings:
 	json = {
 		'public_folders': ['*'],
 		'private_folders': ['diary'],
-		'is_encrypted': False
+		'is_encrypted': False,
+		'version': VERSION
 	}
 	where_star = 'public'
 	file = SETTINGS_PATH
