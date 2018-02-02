@@ -118,6 +118,8 @@ un-intentional side-effects. `"is_encrypted": false` will be present in `setting
 <a name="git"></a>
 ## Automatic git backups
 
+> This feature comes in handy for those who don't trust cloud data storage providers. You can even use this as a second backup for your data. I personally have auto git backups set up so that my notes are stored on both Dropbox and GitHub.
+
 To enable git backups, enable the feature from `sublime_notebook/settings.json`.
 
 ```json
