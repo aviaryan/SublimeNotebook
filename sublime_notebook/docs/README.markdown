@@ -33,7 +33,7 @@ Then you extract the zip file and put the contents in a cloud synced or local fo
 
 Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. Notes can be txt or md files and they will be encrypted with your password.
 
-![How a Sublime notebook looks like](https://cdn-images-1.medium.com/max/800/1*DuTrcxf-zJ-anQShA61efw.png)
+![Sublime Notebook: how it looks like](https://user-images.githubusercontent.com/4047597/35737506-c78a8d0a-0851-11e8-8d90-cd71117b08c7.png)
 
 
 <a name="ac"></a>
