@@ -9,6 +9,7 @@
 * [Note taking features](#nt)
 * [Changing SublimeNotebook password](#cp)
 * [Customizing which folders are encrypted](#custen)
+* [Automatic git backups](#git)
 * [Setting up better Markdown highlighting in Sublime Text](#mdext)
 * [FAQ](#faq)
 
@@ -112,6 +113,42 @@ You can also use the "*" symbol to select all folders. For example, in the follo
 
 **NOTE** - You should edit `settings.json` file only when the notebook is in a decrypted state. Changing it when notebook is encrypted can cause 
 un-intentional side-effects. `"is_encrypted": false` will be present in `settings.json` when notebook is decrypted.
+
+
+<a name="git"></a>
+## Automatic git backups
+
+To enable git backups, enable the feature from `sublime_notebook/settings.json`.
+
+```json
+{
+    "do_git_backup": true,
+}
+```
+
+Once this setting is enabled, you will have to make your notebook a git repo and set `notebookbackup` branch to the git remote you want to backup to.
+Start with an empty remote repository to avoid any conflicts.
+
+```sh
+# pwd is the directory with manager.py and sublime_notebook/ folder.
+$ git init
+$ git remote add notebookbackup <GIT_REMOTE_URL>
+# ^ ssh git url preferred
+```
+
+The git backup will run when you re-encrypt after decrypting the notebook.
+
+![git push](https://i.imgur.com/NFHZcv0.png)
+
+To change how frequently git backup happens, change the `git_push_interval_minutes` value in `settings.json`.
+
+```js
+{
+    "git_push_interval_minutes": 1440,
+}
+```
+
+1440 minutes means 24 hours i.e. 1 day. Set it to `0` to enable instant backups.
 
 
 <a name="mdext"></a>
