@@ -7,12 +7,13 @@ class Settings:
 	"""
 	Settings module
 	"""
-	json = {
+	default_json = {
 		'public_folders': ['*'],
 		'private_folders': ['diary'],
 		'is_encrypted': False,
 		'version': VERSION
 	}
+	json = default_json.copy()
 	where_star = 'public'
 	file = SETTINGS_PATH
 
@@ -62,6 +63,16 @@ class Settings:
 
 	def save_settings(self):
 		Settings._write_settings(self.json, self.file)
+
+	def upgrade_settings(self):
+		if VERSION > self.json['version']:
+			new = self.default_json.copy()
+			new.update(self.json)  # only adds new keys
+			self.json = new.copy()
+			self.json['version'] = VERSION  # upgrade version again
+			self.save_settings()
+			return True
+		return False
 
 	@staticmethod
 	def _find_in_array(item, arr):

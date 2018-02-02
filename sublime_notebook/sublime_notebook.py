@@ -39,9 +39,14 @@ def main():
 		sts = Settings()
 		sts.change_encrypted_status(True)
 	else:
-		key = ''
 		# get settings
 		sts = Settings()
+		# check SublimeNotebook settings version
+		check = sts.upgrade_settings()
+		if check:
+			print_info('settings.json upgraded to current version')
+		# decrypt
+		key = ''
 		if sts.get_encrypted_status():
 			# already encrypted
 			print('Encrypted. Enter key to unlock')
