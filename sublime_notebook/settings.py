@@ -1,6 +1,9 @@
 import json
+import os
+import time
+from subprocess import check_output, STDOUT
 from sublime_notebook import SETTINGS_PATH, VERSION
-from .message import print_err
+from .message import print_err, print_info
 
 
 class Settings:
@@ -11,7 +14,10 @@ class Settings:
 		'public_folders': ['*'],
 		'private_folders': ['diary'],
 		'is_encrypted': False,
-		'version': VERSION
+		'version': VERSION,
+		'do_git_backup': False,
+		'git_push_interval_minutes': 1440,
+		'last_git_push': 0
 	}
 	json = default_json.copy()
 	where_star = 'public'
@@ -73,6 +79,37 @@ class Settings:
 			self.save_settings()
 			return True
 		return False
+
+	def is_git_setup(self):
+		curpath = os.path.dirname(os.path.realpath(__file__))
+		git_path = curpath.rstrip('/\\') + '/../.git'
+		# print(git_path)
+		return os.path.isdir(git_path)
+
+	def do_git_push(self):
+		if not self.json['do_git_backup']:
+			return False
+		secs = int(round(time.time()))
+		if secs < (self.json['last_git_push'] + self.json['git_push_interval_minutes']):
+			return False
+		# start backup
+		print_info('Starting git backup')
+		# check remote
+		out = check_output("git remote", shell=True).decode()
+		if not out:
+			print_err('Error with git remote: ' + str(out))
+			return False
+		if out and out.find('notebookbackup') == -1:
+			print_err('notebookbackup remote not found')
+			return False
+		# push to remote
+		print_info('Pushing to remote')
+		commit_msg = "auto backup " + str(secs)
+		out = check_output("git add . && git commit -m \"{}\" && git push notebookbackup master".format(commit_msg), 
+			stderr=STDOUT, shell=True).decode()
+		print_info('GIT LOG:\n\n' + out)
+		self.json['last_git_push'] = secs
+		self.save_settings()
 
 	@staticmethod
 	def _find_in_array(item, arr):

@@ -73,6 +73,9 @@ def main():
 			# encrypt
 			update_file(encode, get_file_list(), key)
 			sts.change_encrypted_status(True)
+			# do git push
+			if sts.is_git_setup():
+				sts.do_git_push()
 		else:
 			# disable sublime notebook
 			# exit as-is
