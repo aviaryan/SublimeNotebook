@@ -26,9 +26,9 @@ The requirements for using this tool are as follows. Make sure to have them inst
 <a name="gs"></a>
 ## Getting started
 
-The first step is downloading the code from https://github.com/aviaryan/SublimeNotebook
+The first step is downloading the release from https://github.com/aviaryan/SublimeNotebook/releases/latest.
 
-Then you put the code files in a cloud synced or local folder of your choice.
+Then you extract the zip file and put the contents in a cloud synced or local folder of your choice.
 
 Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. Notes can be txt or md files and they will be encrypted with your password.
 
