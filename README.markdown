@@ -12,8 +12,8 @@ Sublime Notebook is an attempt to use Sublime Text as a complete note taking app
 * Search across all notes
 * Hierarchical organization and display of notes
 * Password based encryption for notes
-* Cloud sync (Dropbox, Google Drive, Box)
-* Automatic git backup (to Github, Gitlab or your own private git server)
+* Cloud sync (Dropbox, Google Drive, Box, etc)
+* Automatic git backup (to Github, Gitlab, your own private git server, etc)
 * Markdown based markup and code syntax highlighting
 
 
