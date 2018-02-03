@@ -1,52 +1,34 @@
 # Sublime Notebook
 
+**v0.9**
+
 Sublime Notebook is an attempt to use Sublime Text as a complete note taking application.
 
-**Read the Medium post for setup instructions**:
-https://medium.com/aviaryan/sublime-notebook-an-attempt-to-use-sublime-text-as-my-note-taking-application-b8d846c47905#.hy8alq2ip
+> Blog post for v0.3.0 (no longer recommended) https://medium.com/aviaryan/b8d846c47905#.hy8alq2ip
+
+
+## Why did you build this?
+
+I have been note-taking for as long as I started using computers. I use notes mostly for technical stuff, but these days I am using notes to record all kinds of information like journals, ideas, snippets etc. In my career, I have tried a number of note-taking tools like OneNote, Evernote, CintaNotes, SimpleNote, Cherrytree, Google Keep, etc. But I have never been satisfied with them mainly because - 
+
+1. I don't have any control over how or where my notes are stored. - What if the company closes or the developer stops building the product?
+2. Most of these services are paid or work on only certain Operating Systems. And even if they are truly free and cross-platform, they lack critical features like fast full notebook search or hierarchical organization. 
+
+Because of these reasons, I had to lose my notes a number of times and was forced to start from scratch. This was frustrating, and finally, I decided to do something about it. 
+
+The result is this project, a wrapper/idea that converts my favorite text editor, Sublime Text, to a feature-rich note-taking tool. Sure it might not be as polished as all those premium note-taking tools, but it works and that too in the way I want it to.
 
 
 ## Features
 
-* Search across all notes
+* Faaaast Search across all notes (thanks to Sublime Text)
 * Hierarchical organization and display of notes
-* Password based encryption
-* Cloud sync
-* Markdown based markup and syntax highlighting
+* Password based encryption for notes
+* Cloud sync (Dropbox, Google Drive, Box, etc)
+* Automatic git backup (to Github, Gitlab, your own private git server, etc)
+* Markdown based markup and code syntax highlighting
 
 
-### Updating SublimeNotebook or changing password
+## Documentation
 
-* To update your installation of Sublime Notebook, decrypt your existing notes using old manager.py, then force exit the script before encrypting. Then update the script files from this repo and start `manager.py` to re-encrypt your notes.
-* Same method can be used if you want to change the password used to secure the notes.
-
-
-### FAQ
-
-* Only *.txt and *.md files are detected as notes.
-* You don't need to be in decrypted state to create a new note. Even when in encrypted state, you can create a note. When manager.py starts decrypting the notes, 
-this new file will be ignored and will be encrypted when it's time to encrypt. 
-
-
-### <a name="mdext"></a>Setup Markdown Extended for highlighting md files
-
-* Install the packages from here.
-
-	* [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended)
-	* [Sublime Monokai Extended](https://github.com/jonschlinkert/sublime-monokai-extended) - companion to the first package.
-
-* Make Sublime Markdown Extended as default language for markdown. 
-
-> Navigate through the following menus in Sublime Text: View -> Syntax -> Open all with current extension as... -> Markdown Extended
-
-* Make Sublime Monokai Extended default theme for Markdown extended. Open `Settings - Syntax Specific` from preferences and update the file as follows.
-
-```js
-{
-	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
-	"extensions":
-	[
-		"md"
-	]
-}
-```
+Find the docs in the [sublime_notebook/docs](sublime_notebook/docs) folder.
