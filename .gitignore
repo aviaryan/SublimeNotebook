@@ -6,3 +6,4 @@ __pycache__
 .DS_Store
 FLAG_FILE
 settings.json
+.release/
