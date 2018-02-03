@@ -89,8 +89,8 @@ class Settings:
 	def do_git_push(self):
 		if not self.json['do_git_backup']:
 			return False
-		secs = int(round(time.time()))
-		if secs < (self.json['last_git_push'] + self.json['git_push_interval_minutes']):
+		mins = int(round(time.time()) / 60.0)
+		if mins < (self.json['last_git_push'] + self.json['git_push_interval_minutes']):
 			return False
 		# start backup
 		print_info('Starting git backup')
@@ -104,11 +104,11 @@ class Settings:
 			return False
 		# push to remote
 		print_info('Pushing to remote')
-		commit_msg = "auto backup " + str(secs)
+		commit_msg = "auto backup " + str(mins)
 		out = check_output("git add . && git commit -m \"{}\" && git push notebookbackup master".format(commit_msg), 
 			stderr=STDOUT, shell=True).decode()
 		print_info('GIT LOG:\n\n' + out)
-		self.json['last_git_push'] = secs
+		self.json['last_git_push'] = mins
 		self.save_settings()
 
 	@staticmethod
