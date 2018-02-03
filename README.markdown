@@ -1,6 +1,6 @@
 # Sublime Notebook
 
-**v1.0.0**
+**v0.9**
 
 Sublime Notebook is an attempt to use Sublime Text as a complete note taking application.
 
