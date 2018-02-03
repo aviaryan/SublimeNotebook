@@ -43,7 +43,7 @@ To access your notes, we will use the Projects feature of Sublime Text.
 
 Open Sublime Text and click on "Open Project" in the Project menu.
 
-Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Sidebar). You will see all your notes presented there with the hierarchy. 
+Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Side Bar). You will see all your notes presented there with the hierarchy. 
 
 Whenever you want to open your Sublime Notebook, you can use the switch project shortcut (Cmd-Ctrl-P or Ctrl-Alt-P) and select `notebook.sublime-project` to switch to the Notebook project.
 
