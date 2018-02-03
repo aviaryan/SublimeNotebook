@@ -21,7 +21,7 @@ The result is this project, a wrapper/idea that converts my favorite text editor
 
 ## Features
 
-* Search across all notes
+* Faaaast Search across all notes (thanks to Sublime Text)
 * Hierarchical organization and display of notes
 * Password based encryption for notes
 * Cloud sync (Dropbox, Google Drive, Box, etc)
