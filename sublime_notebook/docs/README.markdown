@@ -15,6 +15,7 @@
 
 <a name="rq"></a>
 ## :one: Requirements
+:point_up_2: [[back to top](#docs)]
 
 The requirements for using this tool are as follows. Make sure to have them installed before proceeding to the next section.
 
@@ -155,7 +156,7 @@ $ git remote add notebookbackup <GIT_REMOTE_URL>
 
 The git backup will run when you re-encrypt after decrypting the notebook.
 
-![git push](https://i.imgur.com/NFHZcv0.png)
+![git backup](https://user-images.githubusercontent.com/4047597/35779595-e2e04022-09f5-11e8-8fb6-2e808b29cdb6.png)
 
 To change how frequently git backup happens, change the `git_push_interval_minutes` value in `settings.json`.
 
