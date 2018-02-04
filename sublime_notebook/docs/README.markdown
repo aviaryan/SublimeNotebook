@@ -68,10 +68,13 @@ Then use `python manager.py` or `./manager.py` to run the script.
 
 When it runs for the first time, it will find the notes and ask you a password for encryption. 
 After getting the password, it will encrypt all non-public notes using that password. 
+
+![first time encryption](https://user-images.githubusercontent.com/4047597/35779481-b09abd92-09f3-11e8-8dee-accbf5a64581.png)
+
 In the subsequent runs, `manager.py` will work as an un-locker where it will ask password to decrypt the notes and then pause its execution. 
 Now you can view and edit your notes and then later on encrypt them again by entering 'e' in the prompt.
 
-![screen shot 2018-01-27 at 8 06 07 pm](https://user-images.githubusercontent.com/4047597/35472896-897a22a4-039d-11e8-9b1d-153c06bc203e.png)
+![second run](https://user-images.githubusercontent.com/4047597/35779488-dc1046cc-09f3-11e8-8773-ae66da8325c4.png)
 
 
 <a name="nt"></a>
