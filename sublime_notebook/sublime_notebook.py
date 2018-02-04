@@ -55,7 +55,7 @@ def main():
 			key = get_key()
 			failStatus = update_file(decode, get_file_list(), key)
 			if failStatus:
-				print('You entered wrong key. Fuck off!')
+				print('You entered wrong key. Please try again..')
 				exit(2)
 			# remove encryption status
 			sts.change_encrypted_status(False)
