@@ -98,6 +98,8 @@ To change password of your Sublime Notebook, decrypt your existing notes using o
 
 Then start `manager.py` again to re-encrypt your notes. This time you will be asked for a new password to encrypt your notes.
 
+![changing password](https://user-images.githubusercontent.com/4047597/35779512-310e70a4-09f4-11e8-9298-4243ae3fe04d.png)
+
 
 <a name="custen"></a>
 ## :seven: Customizing which folders are encrypted
@@ -191,12 +193,13 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 }
 ```
 
+![sublime monkai](https://camo.githubusercontent.com/e5112e65510eada23f8cdc306ba46bfe1043f201/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3338333939342f3732363833332f30666465306431362d653133382d313165322d386533642d3864626663393132323465372e706e67)
+
 
 <a name="faq"></a>
 ## :keycap_ten: FAQ
 :point_up_2: [[back to top](#docs)]
 
-Only *.txt and *.md files are detected as notes.
+* Only *.txt and *.md files are detected as notes.
 
-You don't need to be in decrypted state to create a new note. Even when in encrypted state, you can create a note. 
-When manager.py starts decrypting the notes, this new file will be ignored and will be encrypted when it's time to encrypt. 
+* You don't need to be in decrypted state to create a new note. Even when in encrypted state, you can create a note. When `manager.py` starts decrypting the notes, this new file will be ignored and will be encrypted when it's time to encrypt. 
