@@ -1,7 +1,5 @@
 <a name="docs"></a>
-# Documentation
-
-## Table of Contents
+# Table of Contents
 
 :one: [Requirements](#rq)  
 :two: [Getting Started](#gs)  
