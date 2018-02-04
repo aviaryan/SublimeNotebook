@@ -33,4 +33,4 @@ The result is this project, a wrapper/idea that converts my favorite text editor
 
 ## Documentation :yum:
 
-Find the docs in the [sublime_notebook/docs](sublime_notebook/docs) folder.
+Find the docs in the [sublime_notebook/docs](sublime_notebook/docs/README.markdown) folder.
