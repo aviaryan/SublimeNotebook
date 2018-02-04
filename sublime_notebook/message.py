@@ -3,8 +3,13 @@ Print statements
 """
 
 def print_info(msg):
-	print('\n[[ ' + msg + ' ]]\n')
+	if msg.find('\n') > -1:
+		print('\n' + msg)
+	else:
+		print('\n[[ ' + msg + ' ]]')
 
 def print_err(msg):
-	print('\n<< ' + msg + ' >>\n')
-	
+	if msg.find('\n') > -1:
+		print('\n' + msg)
+	else:
+		print('\n<< ' + msg + ' >>')

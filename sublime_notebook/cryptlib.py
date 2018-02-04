@@ -3,6 +3,7 @@ import os
 import re
 from getpass import getpass
 from .settings import Settings
+from .message import print_err
 
 
 EXTRA_STR = 'ENCo0D#DT{xTCh$cKe>'
@@ -74,7 +75,7 @@ def update_file(funcptr, flist, key):
         if newData is None:
             newData = data
             failed = True
-            print('Failed decrypting %s' % file)
+            print_err('Failed decrypting %s' % file)
         fptr.write(newData)
         fptr.close()
         # check if failed
