@@ -27,7 +27,7 @@ The requirements for using this tool are as follows. Make sure to have them inst
 
 <a name="gs"></a>
 ## :two: Getting started
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 The first step is downloading the release from https://github.com/aviaryan/SublimeNotebook/releases/latest.
 
@@ -40,7 +40,7 @@ Done! You can now create any number of notes in that folder. For hierarchy, you 
 
 <a name="ac"></a>
 ## :three: Accessing your notes
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 To access your notes, we will use the Projects feature of Sublime Text.
 
@@ -55,7 +55,7 @@ Whenever you want to open your Sublime Notebook, you can use the switch project 
 
 <a name="en"></a>
 ## :four: Encrypting your notes
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 To encrypt or decrypt notes, you use the `manager.py` file located in the notebook root. It runs in Python 3 and requires no additional dependencies. 
 I recommend changing the first line of the file to point to your interpreter.
@@ -78,7 +78,7 @@ Now you can view and edit your notes and then later on encrypt them again by ent
 
 <a name="nt"></a>
 ## :five: Note taking features
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 * To search through all your notes, use the Sublime Text’s search in project feature (Ctrl-Shift-F or Cmd-Shift-F).
 
@@ -91,7 +91,7 @@ Now you can view and edit your notes and then later on encrypt them again by ent
 
 <a name="cp"></a>
 ## :six: Changing SublimeNotebook password
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 To change password of your Sublime Notebook, decrypt your existing notes using old `manager.py`, then exit the script in decrypted state (using "d").
 
@@ -100,7 +100,7 @@ Then start `manager.py` again to re-encrypt your notes. This time you will be as
 
 <a name="custen"></a>
 ## :seven: Customizing which folders are encrypted
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 To customize which folders are encrypted, use the `settings.json` file in `sublime_notebook/` directory.
 
@@ -128,7 +128,7 @@ unintentional side-effects. `"is_encrypted": false` will be present in `settings
 
 <a name="git"></a>
 ## :eight: Automatic git backups
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 > This feature comes in handy for those who don't trust cloud data storage providers. You can even use this as a second backup for your data. I personally have auto git backups set up so that my notes are stored on both Dropbox and GitHub.
 
@@ -167,7 +167,7 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 
 <a name="mdext"></a>
 ## :nine: Setting up better Markdown highlighting in Sublime Text
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 * Install the packages from here.
 
@@ -193,7 +193,7 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 
 <a name="faq"></a>
 ## :keycap_ten: FAQ
-[:point_up_2:](#docs) [[back to top](#docs)]
+:point_up_2: [[back to top](#docs)]
 
 Only *.txt and *.md files are detected as notes.
 
