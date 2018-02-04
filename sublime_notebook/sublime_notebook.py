@@ -30,7 +30,9 @@ def main():
 		# or decrypted state in power fail
 		print('Not encrypted, encrypting ....')
 		# create settings
-		print_info('Created settings.json in sublime_notebook/')
+		print_info('Created settings.json in sublime_notebook/ directory. ' + 
+			'By default, only the "diary" directory is privated (encrypted), you can change this setting by editing settings.json.' +
+			' See the docs for more info.')
 		Settings._create_default_file()
 		# get password
 		key = get_first_time_key()
