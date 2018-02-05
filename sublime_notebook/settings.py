@@ -105,7 +105,7 @@ class Settings:
 		# push to remote
 		print_info('Pushing to remote')
 		commit_msg = "auto backup " + str(mins)
-		out = check_output("git add . && git commit -m \"{}\" && git push notebookbackup master".format(commit_msg), 
+		out = check_output("git add -A && git commit -m \"{}\" && git push notebookbackup master".format(commit_msg), 
 			stderr=STDOUT, shell=True).decode()
 		print_info('GIT LOG:\n\n' + out)
 		self.json['last_git_push'] = mins
