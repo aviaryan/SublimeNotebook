@@ -28,7 +28,7 @@ The requirements for using this tool are as follows. Make sure to have them inst
 ## :two: Getting started
 :point_up_2: [[back to top](#docs)]
 
-The first step is downloading the release from https://github.com/aviaryan/SublimeNotebook/releases/latest.
+The first step is downloading the release (`SublimeNotebook_vX.Y.zip`) from https://github.com/aviaryan/SublimeNotebook/releases/latest.
 
 Then you extract the zip file and put the contents in a cloud synced or local folder of your choice.
 
