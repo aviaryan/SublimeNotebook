@@ -32,7 +32,11 @@ The first step is downloading the release (`SublimeNotebook_vX.Y.zip`) from http
 
 Then you extract the zip file and put the contents in a cloud synced or local folder of your choice.
 
-Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. Notes can be txt or md files and they will be encrypted with your password.
+Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. 
+
+Notes can be `txt` or `md` files and they will be encrypted with your password. 
+
+By default, only `diary` folder (if it exists) is encrypted. You can learn more about changing this setting [here](#custen).
 
 ![Sublime Notebook: how it looks like](https://user-images.githubusercontent.com/4047597/35737506-c78a8d0a-0851-11e8-8d90-cd71117b08c7.png)
 
@@ -68,7 +72,7 @@ To run `manager.py`, you can use the shortcut Ctrl-B (Cmd-B on OSX) to launch a 
 Then use `python manager.py` or `./manager.py` to run the script.
 
 When it runs for the first time, it will find the notes and ask you a password for encryption. 
-After getting the password, it will encrypt all non-public notes using that password. 
+After getting the password, it will encrypt all [non-public notes](#custen) using that password. 
 
 ![first time encryption](https://user-images.githubusercontent.com/4047597/35779481-b09abd92-09f3-11e8-8dee-accbf5a64581.png)
 
