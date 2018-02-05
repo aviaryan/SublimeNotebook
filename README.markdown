@@ -27,7 +27,7 @@ The result is this project, a wrapper/idea that converts my favorite text editor
 * Hierarchical organization and display of notes
 * Password based encryption for notes
 * Cloud sync (Dropbox, Google Drive, Box, etc)
-* Automatic git backup (to Github, Gitlab, your own private git server, etc)
+* Periodic git backup (to Github, Gitlab, your own private git server, etc)
 * Markdown based markup and code syntax highlighting
 
 
