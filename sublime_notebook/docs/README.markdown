@@ -32,9 +32,9 @@ The first step is downloading the release (`SublimeNotebook_vX.Y.zip`) from http
 
 Then you extract the zip file and put the contents in a cloud synced or local folder of your choice.
 
-Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders. 
+Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders.
 
-Notes can be `txt` or `md` files and they will be encrypted with your password. 
+Notes can be `txt` or `md` files and they will be encrypted with your password.
 
 By default, only `diary` folder (if it exists) is encrypted. You can learn more about changing this setting [here](#custen).
 
@@ -47,9 +47,9 @@ By default, only `diary` folder (if it exists) is encrypted. You can learn more 
 
 To access your notes, we will use the Projects feature of Sublime Text.
 
-Open Sublime Text and click on "Open Project" in the Project menu.
+Open Sublime Text and click on "Open Project" in the Project menu, or open the project from the command line (see the [FAQ](#faq)).
 
-Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Side Bar). You will see all your notes presented there with the hierarchy. 
+Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Side Bar). You will see all your notes presented there with the hierarchy.
 
 Whenever you want to open your Sublime Notebook, you can use the switch project shortcut (Cmd-Ctrl-P or Ctrl-Alt-P) and select `notebook.sublime-project` to switch to the Notebook project.
 
@@ -60,23 +60,23 @@ Whenever you want to open your Sublime Notebook, you can use the switch project 
 ## :four: Encrypting your notes
 :point_up_2: [[back to top](#docs)]
 
-To encrypt or decrypt notes, you use the `manager.py` file located in the notebook root. It runs in Python 3 and requires no additional dependencies. 
+To encrypt or decrypt notes, you use the `manager.py` file located in the notebook root. It runs in Python 3 and requires no additional dependencies.
 I recommend changing the first line of the file to point to your interpreter.
 
 ```python
 #!/Users/aviaryan/miniconda3/bin/python
 ```
 
-To run `manager.py`, you can use the shortcut Ctrl-B (Cmd-B on OSX) to launch a terminal window in the `manager.py`'s directory. 
+To run `manager.py`, you can use the shortcut Ctrl-B (Cmd-B on OSX) to launch a terminal window in the `manager.py`'s directory.
 
 Then use `python manager.py` or `./manager.py` to run the script.
 
-When it runs for the first time, it will find the notes and ask you a password for encryption. 
-After getting the password, it will encrypt all [non-public notes](#custen) using that password. 
+When it runs for the first time, it will find the notes and ask you a password for encryption.
+After getting the password, it will encrypt all [non-public notes](#custen) using that password.
 
 ![first time encryption](https://user-images.githubusercontent.com/4047597/35779481-b09abd92-09f3-11e8-8dee-accbf5a64581.png)
 
-In the subsequent runs, `manager.py` will work as an un-locker where it will ask password to decrypt the notes and then pause its execution. 
+In the subsequent runs, `manager.py` will work as an un-locker where it will ask password to decrypt the notes and then pause its execution.
 Now you can view and edit your notes and then later on encrypt them again by entering 'e' in the prompt.
 
 ![second run](https://user-images.githubusercontent.com/4047597/35779488-dc1046cc-09f3-11e8-8773-ae66da8325c4.png)
@@ -90,7 +90,7 @@ Now you can view and edit your notes and then later on encrypt them again by ent
 
 * You can use the Sublime Text sidebar to view your notes in a hierarchical fashion.
 
-* Store the folder in Dropbox, Google Drive or Box to have it on all your computers (as well as secure a backup). 
+* Store the folder in Dropbox, Google Drive or Box to have it on all your computers (as well as secure a backup).
 
 * The Python 3 script uses no extra dependencies so you can run the script out-of-the-box on any system that has Python installed (popular Linux distros and Macs for example have it by default).
 
@@ -112,7 +112,7 @@ Then start `manager.py` again to re-encrypt your notes. This time you will be as
 
 To customize which folders are encrypted, use the `settings.json` file in `sublime_notebook/` directory.
 
-1. "private_folders" are the one that are encrypted. 
+1. "private_folders" are the one that are encrypted.
 2. "public_folders" are not encrypted.
 
 A folder by default is public if it is not included in either of them.
@@ -130,7 +130,7 @@ You can also use the "*" symbol to select all folders. For example, in the follo
 }
 ```
 
-**NOTE** - You should edit `settings.json` file only when the notebook is in a decrypted state. Changing it when notebook is encrypted can cause 
+**NOTE** - You should edit `settings.json` file only when the notebook is in a decrypted state. Changing it when notebook is encrypted can cause
 unintentional side-effects. `"is_encrypted": false` will be present in `settings.json` when notebook is decrypted.
 
 
@@ -182,7 +182,7 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 	* [Sublime Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended)
 	* [Sublime Monokai Extended](https://github.com/jonschlinkert/sublime-monokai-extended) - companion to the first package.
 
-* Make Sublime Markdown Extended as default language for markdown. 
+* Make Sublime Markdown Extended as default language for markdown.
 
 > Navigate through the following menus in Sublime Text: View -> Syntax -> Open all with current extension as... -> Markdown Extended
 
@@ -200,7 +200,6 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 
 ![sublime monkai](https://camo.githubusercontent.com/e5112e65510eada23f8cdc306ba46bfe1043f201/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3338333939342f3732363833332f30666465306431362d653133382d313165322d386533642d3864626663393132323465372e706e67)
 
-
 <a name="faq"></a>
 ## :keycap_ten: FAQ
 :point_up_2: [[back to top](#docs)]
@@ -208,3 +207,5 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 * Only *.txt and *.md files are detected as notes.
 
 * You don't need to be in decrypted state to create a new note. Even when in encrypted state, you can create a note. When `manager.py` starts decrypting the notes, this new file will be ignored and will be encrypted when it's time to encrypt. 
+
+* You can open a Sublime Text project from the command line with `subl --project path/to/your/project`, provided that you set up the `subl`-command on your system ([see the official Sublime Text documentation](https://www.sublimetext.com/docs/3/osx_command_line.html)). You might want to set up an alias to open your notes-project. You might also want to check out the other command line options, which are listed in the [unofficial documentation for Sublime Text](http://docs.sublimetext.info/en/latest/command_line/command_line.html).
