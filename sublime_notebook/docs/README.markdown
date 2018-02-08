@@ -47,13 +47,15 @@ By default, only `diary` folder (if it exists) is encrypted. You can learn more 
 
 To access your notes, we will use the Projects feature of Sublime Text.
 
-Open Sublime Text and click on "Open Project" in the Project menu, or open the project from the command line (see the [FAQ](#faq)).
+Open Sublime Text and click on "Open Project" in the Project menu.
 
 Browse for the `notebook.sublime-project` file in the folder you downloaded and open it. Now open the Sidebar (View -> Side Bar). You will see all your notes presented there with the hierarchy.
 
 Whenever you want to open your Sublime Notebook, you can use the switch project shortcut (Cmd-Ctrl-P or Ctrl-Alt-P) and select `notebook.sublime-project` to switch to the Notebook project.
 
 ![Project Selector](https://user-images.githubusercontent.com/4047597/35473121-4556dd7a-03a1-11e8-8c3a-6e85592d5d5f.png)
+
+PS - To open SublimeNotebook from commandline, see [this section](#subl-cli).
 
 
 <a name="en"></a>
@@ -208,4 +210,5 @@ To change how frequently git backup happens, change the `git_push_interval_minut
 
 * You don't need to be in decrypted state to create a new note. Even when in encrypted state, you can create a note. When `manager.py` starts decrypting the notes, this new file will be ignored and will be encrypted when it's time to encrypt. 
 
-* You can open a Sublime Text project from the command line with `subl --project path/to/your/project`, provided that you set up the `subl`-command on your system ([see the official Sublime Text documentation](https://www.sublimetext.com/docs/3/osx_command_line.html)). You might want to set up an alias to open your notes-project. You might also want to check out the other command line options, which are listed in the [unofficial documentation for Sublime Text](http://docs.sublimetext.info/en/latest/command_line/command_line.html).
+<a name="subl-cli"></a>
+* **Open SublimeNotebook from commandline:** You can open a Sublime Text project from the command line with `subl --project path/to/your/project`, provided that you set up the `subl` command on your system ([see the official Sublime Text documentation](https://www.sublimetext.com/docs/3/osx_command_line.html)). You might want to set up an alias to open your notebook project. Also check out other command line options listed in the [unofficial documentation for Sublime Text](http://docs.sublimetext.info/en/latest/command_line/command_line.html).
