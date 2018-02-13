@@ -34,3 +34,12 @@ The result is this project, a wrapper/idea that converts my favorite text editor
 ## Documentation :yum:
 
 Find the docs in the [sublime_notebook/docs](sublime_notebook/docs/README.markdown) folder.
+
+
+## Support the project :money_with_wings:
+
+Are you using this project regularly and find it adding value to your life?
+
+If yes, please consider supporting the author by donating **$5**.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/aviaryan/5)
