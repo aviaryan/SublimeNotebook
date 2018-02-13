@@ -36,6 +36,11 @@ The result is this project, a wrapper/idea that converts my favorite text editor
 Find the docs in the [sublime_notebook/docs](sublime_notebook/docs/README.markdown) folder.
 
 
+## Ports :left_right_arrow:
+
+[VSCode Notebook](https://github.com/aviaryan/VSCodeNotebook) - A spin-off of this project that works with [Visual Studio Code](https://code.visualstudio.com/).
+
+
 ## Support the project :money_with_wings:
 
 Are you using this project regularly and find it adding value to your life?
