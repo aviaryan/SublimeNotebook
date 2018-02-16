@@ -150,7 +150,7 @@ To enable git backups, enable the feature from `sublime_notebook/settings.json`.
 }
 ```
 
-Once this setting is enabled, you will have to make your notebook a git repository and set `notebookbackup` branch to the git remote you want to backup to.
+Once this setting is enabled, you will have to make your notebook a git repository and set `notebookbackup` remote to the git remote you want to backup to.
 Start with an empty remote repository to avoid any conflicts.
 
 ```sh
