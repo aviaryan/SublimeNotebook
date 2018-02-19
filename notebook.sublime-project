@@ -2,32 +2,49 @@
 	"build_systems":
 	[
 		{
-			"name": "manager.py",
-			"working_dir": "${project_path}",
-			"osx": {
-				"shell_cmd": "open -a Terminal.app ${project_path}"
-			},
-			"linux": {
-				// http://stackoverflow.com/questions/21196077/sublime-text-3-compile-program-and-run-in-terminal
+			"linux":
+			{
 				"shell_cmd": "gnome-terminal -e './manager.py; exec bash\"'"
 			},
-			"windows": {
-				// http://stackoverflow.com/questions/19942347/run-program-in-cmd-mode-after-building-from-sublime-text-2
-				"cmd": ["start", "cmd", "/k", "python manager.py"],
-            	"shell": true,
-			}
+			"name": "manager.py",
+			"osx":
+			{
+				"shell_cmd": "open -a Terminal.app ${project_path}"
+			},
+			"windows":
+			{
+				"cmd":
+				[
+					"start",
+					"cmd",
+					"/k",
+					"python manager.py"
+				],
+				"shell": true
+			},
+			"working_dir": "${project_path}"
 		}
 	],
 	"folders":
 	[
 		{
-			"path": ".",
-			"folder_exclude_patterns": ["__pycache__"],
-			"file_exclude_patterns": ["*.pyc"]
+			"file_exclude_patterns":
+			[
+				"*.pyc",
+				// enable in prod
+				// "sublime_notebook/*.py"
+			],
+			"folder_exclude_patterns":
+			[
+				"__pycache__",
+				".release"
+			],
+			"path": "."
 		}
 	],
-	"settings": {
-		"word_wrap": true,
- 		"margin": 20
+	"settings":
+	{
+		"margin": 20,
+		"word_wrap": true
 	}
 }
