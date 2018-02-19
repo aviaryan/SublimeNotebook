@@ -2,7 +2,7 @@
 	Sublime Notebook :memo:
 </h1> 
 
-**v1.0**
+**v2.0**
 
 Sublime Notebook is an attempt to use Sublime Text as a complete note taking application.
 
@@ -25,7 +25,7 @@ The result is this project, a wrapper/idea that converts my favorite text editor
 
 * Faaaast Search across all notes (thanks to Sublime Text)
 * Hierarchical organization and display of notes
-* Password based encryption for notes
+* Password based encryption for notes (thanks to [pyAES](https://github.com/ricmoo/pyaes))
 * Cloud sync (Dropbox, Google Drive, Box, etc)
 * Periodic git backup (to Github, Gitlab, your own private git server, etc)
 * Markdown based markup and code syntax highlighting

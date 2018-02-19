@@ -18,7 +18,7 @@ def get_first_time_key():
 
 def main():
 	"""
-	Executes Sublime Notebook
+	Executes Notebook
 	"""
 	if not os.path.exists(SETTINGS_PATH):
 		# new case
@@ -42,7 +42,7 @@ def main():
 	else:
 		# get settings
 		sts = Settings()
-		# check SublimeNotebook settings version
+		# check Notebook settings version
 		check = sts.upgrade_settings()
 		if check:
 			print_info('settings.json upgraded to current version')
@@ -72,14 +72,17 @@ def main():
 				break
 		if ans == 'e':
 			# encrypt
-			update_file(encode, get_file_list(), key)
+			st = update_file(encode, get_file_list(), key)
+			if st:
+				print_err('Something went wrong while encrypting')
+				exit(3)
 			sts.change_encrypted_status(True)
 			print_info('Notes encrypted')
 			# do git push
 			if sts.is_git_setup():
 				sts.do_git_push()
 		else:
-			# disable sublime notebook
+			# disable notebook
 			# exit as-is
 			print_info('Notes have been left decrypted')
 			pass

@@ -37,7 +37,9 @@
 			"folder_exclude_patterns":
 			[
 				"__pycache__",
-				".release"
+				".release",
+				// enable in prod
+				// "sublime_notebook/pyaes"
 			],
 			"path": "."
 		}

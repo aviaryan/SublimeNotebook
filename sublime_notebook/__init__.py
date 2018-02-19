@@ -1,2 +1,2 @@
 SETTINGS_PATH = 'sublime_notebook/settings.json'
-VERSION = 1.0
+VERSION = 2.0
