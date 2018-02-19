@@ -31,15 +31,13 @@
 			"file_exclude_patterns":
 			[
 				"*.pyc",
-				// enable in prod
-				// "sublime_notebook/*.py"
+				"////sublime_notebook/*.py"
 			],
 			"folder_exclude_patterns":
 			[
 				"__pycache__",
 				".release",
-				// enable in prod
-				// "sublime_notebook/pyaes"
+				"////sublime_notebook/pyaes"
 			],
 			"path": "."
 		}
