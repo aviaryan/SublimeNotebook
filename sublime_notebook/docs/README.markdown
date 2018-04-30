@@ -34,7 +34,7 @@ Then you extract the zip file and put the contents in a cloud synced or local fo
 
 Done! You can now create any number of notes in that folder. For hierarchy, you can use folders and sub-folders.
 
-Notes can be `txt` or `md` files and they will be encrypted with your password.
+Notes [by default](#custen), can be `txt` or `md` files and they will be encrypted with your password.
 
 By default, only `diary` folder (if it exists) is encrypted. You can learn more about changing this setting [here](#custen).
 
@@ -128,6 +128,20 @@ You can also use the "*" symbol to select all folders. For example, in the follo
     ],
     "public_folders": [
         "web_links"
+    ]
+}
+```
+
+----
+
+You can also change which files are to be considered as notes, and thus encrypted. For that, change the `note_extensions` setting.
+
+```json
+{
+    "note_extensions": [
+        "txt",
+        "md",
+        "rst"
     ]
 }
 ```

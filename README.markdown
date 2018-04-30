@@ -2,7 +2,7 @@
 	Sublime Notebook :memo:
 </h1> 
 
-**v2.0**
+**v2.1**
 
 Sublime Notebook is an attempt to use Sublime Text as a complete note taking application.
 
