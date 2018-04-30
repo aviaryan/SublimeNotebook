@@ -7,7 +7,7 @@
 :four: [Encrypting your notes](#en)  
 :five: [Note taking features](#nt)  
 :six: [Changing SublimeNotebook password](#cp)  
-:seven: [Customizing which folders are encrypted](#custen)  
+:seven: [Customizing which folders and files are encrypted](#custen)  
 :eight: [Automatic git backups](#git)  
 :nine: [Setting up better Markdown highlighting in Sublime Text](#mdext)  
 :keycap_ten: [FAQ](#faq)  
@@ -109,7 +109,7 @@ Then start `manager.py` again to re-encrypt your notes. This time you will be as
 
 
 <a name="custen"></a>
-## :seven: Customizing which folders are encrypted
+## :seven: Customizing which folders and files are encrypted
 :point_up_2: [[back to top](#docs)]
 
 To customize which folders are encrypted, use the `settings.json` file in `sublime_notebook/` directory.
